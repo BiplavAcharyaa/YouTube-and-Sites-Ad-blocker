@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>BipBuster</title>
+<link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>BipBuster</h1>
+      <p class="subtitle">Adaptive Manifest V3 ad blocker</p>
+    </header>
+
+    <section class="issue-card" id="issueCard" hidden>
+      <p class="issue-title" id="issueTitle"></p>
+      <ul id="issueList"></ul>
+      <div class="issue-actions" id="issueActions"></div>
+    </section>
+
+    <section class="status-card">
+      <div class="status-row">
+        <span class="status-label">Blocking</span>
+        <label class="switch">
+          <input type="checkbox" id="blockingToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Cosmetic filtering</span>
+        <label class="switch">
+          <input type="checkbox" id="cosmeticToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Default mode</span>
+        <select id="globalMode">
+          <option value="balanced">Balanced</option>
+          <option value="strict">Strict</option>
+          <option value="compatibility">Compatibility</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="status-card" id="siteCard">
+      <div class="site-head">
+        <span class="site-host" id="siteHost"></span>
+        <span class="site-state" id="siteState"></span>
+      </div>
+      <div id="siteControls">
+        <div class="status-row">
+          <span class="status-label">Protection on this site</span>
+          <label class="switch">
+            <input type="checkbox" id="siteToggle" />
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="status-row">
+          <span class="status-label">Site mode</span>
+          <select id="siteMode">
+            <option value="">Default</option>
+            <option value="balanced">Balanced</option>
+            <option value="strict">Strict</option>
+            <option value="compatibility">Compatibility</option>
+          </select>
+        </div>
+        <div class="pause-row">
+          <select id="pauseDuration">
+            <option value="15">15 minutes</option>
+            <option value="60">1 hour</option>
+            <option value="1440">24 hours</option>
+          </select>
+          <button id="pauseBtn">Pause</button>
+          <button id="reloadBtn">Reload</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-card">
+      <div class="stat">
+        <span class="stat-value" id="tabBlockedCount">0</span>
+        <span class="stat-label">requests blocked on this tab</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="customDomainCount">0</span>
+        <span class="stat-label">custom blocked domains</span>
+      </div>
+    </section>
+
+    <footer>
+      <button id="openOptions">Open settings</button>
+    </footer>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>

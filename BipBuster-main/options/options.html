@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>BipBuster Settings</title>
+<link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <div class="page">
+    <h1>BipBuster — Settings</h1>
+
+    <section class="card">
+      <h2>General</h2>
+      <div class="row">
+        <span>Enable blocking</span>
+        <label class="switch">
+          <input type="checkbox" id="blockingToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="row">
+        <span>Enable cosmetic filtering</span>
+        <label class="switch">
+          <input type="checkbox" id="cosmeticToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="row">
+        <span>Default mode</span>
+        <select id="modeSelect">
+          <option value="balanced">Balanced</option>
+          <option value="strict">Strict</option>
+          <option value="compatibility">Compatibility</option>
+        </select>
+      </div>
+      <div class="row">
+        <span>Fix compatibility problems automatically</span>
+        <label class="switch">
+          <input type="checkbox" id="autoFixToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="row">
+        <span>Click YouTube skip buttons when they appear</span>
+        <label class="switch">
+          <input type="checkbox" id="youtubeSkipToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Filter lists</h2>
+      <div class="row">
+        <span>EasyList</span>
+        <label class="switch">
+          <input type="checkbox" id="listEasylist" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <p class="hint" id="statusEasylist"></p>
+      <div class="row">
+        <span>EasyPrivacy</span>
+        <label class="switch">
+          <input type="checkbox" id="listEasyprivacy" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <p class="hint" id="statusEasyprivacy"></p>
+      <div class="row">
+        <span>Update lists automatically</span>
+        <label class="switch">
+          <input type="checkbox" id="autoUpdateToggle" />
+          <span class="slider"></span>
+        </label>
+      </div>
+      <div class="add-row">
+        <button id="updateListsBtn">Update now</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Site preferences</h2>
+      <p class="hint">Set a mode for a site, or turn protection off for it.</p>
+      <div class="add-row">
+        <input type="text" id="siteInput" placeholder="example.com" />
+        <select id="siteModeSelect">
+          <option value="balanced">Balanced</option>
+          <option value="strict">Strict</option>
+          <option value="compatibility">Compatibility</option>
+          <option value="off">Protection off</option>
+        </select>
+        <button id="addSiteBtn">Add</button>
+      </div>
+      <ul id="siteList"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Automatic exceptions</h2>
+      <p class="hint">Resources allowed on specific sites to restore functionality.</p>
+      <ul id="exceptionList"></ul>
+    </section>
+
+    <section class="card">
+      <h2>Custom rules</h2>
+      <p class="hint">One filter per line, using EasyList syntax. Lines starting with ! are ignored.</p>
+      <textarea id="customRules" rows="6" spellcheck="false"></textarea>
+      <div class="add-row">
+        <button id="saveRulesBtn">Save rules</button>
+      </div>
+      <p class="hint" id="rulesSummary"></p>
+    </section>
+
+    <section class="card">
+      <h2>Custom blocked domains</h2>
+      <p class="hint">Add extra domains to block network requests to, e.g. <code>example-ads.com</code></p>
+      <div class="add-row">
+        <input type="text" id="domainInput" placeholder="ads.example.com" />
+        <button id="addDomainBtn">Add</button>
+      </div>
+      <ul id="domainList"></ul>
+    </section>
+
+    <p id="savedMessage" class="saved-message"></p>
+  </div>
+  <script type="module" src="options.js"></script>
+</body>
+</html>

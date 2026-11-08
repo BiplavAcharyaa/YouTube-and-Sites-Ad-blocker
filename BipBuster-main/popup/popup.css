@@ -1,0 +1,235 @@
+body {
+  margin: 0;
+  width: 300px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #16181d;
+  color: #eaeaea;
+}
+
+.container {
+  padding: 16px;
+}
+
+header h1 {
+  font-size: 16px;
+  margin: 0 0 2px 0;
+}
+
+.subtitle {
+  margin: 0 0 14px 0;
+  font-size: 11px;
+  color: #9aa0a6;
+}
+
+.status-card,
+.stats-card {
+  background: #21242b;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.status-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.status-label {
+  font-size: 13px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  flex-shrink: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: #4a4d55;
+  border-radius: 22px;
+  transition: 0.2s;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.2s;
+}
+
+input:checked + .slider {
+  background-color: #4caf50;
+}
+
+input:checked + .slider::before {
+  transform: translateX(18px);
+}
+
+.stats-card {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 48%;
+}
+
+.stat-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4caf50;
+}
+
+.stat-label {
+  font-size: 10px;
+  color: #9aa0a6;
+  margin-top: 4px;
+}
+
+footer {
+  text-align: center;
+}
+
+#openOptions {
+  width: 100%;
+  padding: 9px;
+  border: none;
+  border-radius: 8px;
+  background: #2f333c;
+  color: #eaeaea;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#openOptions:hover {
+  background: #383c46;
+}
+
+select {
+  background: #2f333c;
+  color: #eaeaea;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 8px;
+  font-size: 12px;
+}
+
+.site-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding-bottom: 6px;
+}
+
+.site-host {
+  font-size: 13px;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-state {
+  font-size: 10px;
+  color: #9aa0a6;
+  flex-shrink: 0;
+}
+
+.pause-row {
+  display: flex;
+  gap: 6px;
+  padding-top: 8px;
+}
+
+.pause-row select {
+  flex: 1;
+}
+
+.pause-row button,
+.issue-actions button {
+  border: none;
+  border-radius: 6px;
+  background: #2f333c;
+  color: #eaeaea;
+  font-size: 12px;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.pause-row button:hover,
+.issue-actions button:hover {
+  background: #383c46;
+}
+
+.issue-card {
+  background: #3a3220;
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+}
+
+.issue-card[hidden] {
+  display: none;
+}
+
+.issue-title {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  color: #f9d778;
+}
+
+#issueList {
+  list-style: none;
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+
+#issueList li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 11px;
+  padding: 3px 0;
+}
+
+#issueList .item-url {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  color: #cfcfcf;
+}
+
+.issue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+[hidden] {
+  display: none !important;
+}
